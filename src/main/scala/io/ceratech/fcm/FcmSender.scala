@@ -1,11 +1,11 @@
 package io.ceratech.fcm
 
-import com.typesafe.scalalogging.Logger
+import play.api.Logger
 import io.ceratech.fcm.auth.FirebaseAuthenticator
 import io.circe.Error
 import io.circe.syntax._
-import sttp.client3._
-import sttp.client3.circe._
+import sttp.client4._
+import sttp.client4.circe._
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
@@ -34,7 +34,7 @@ class DefaultFcmSender @Inject()(val fcmConfigProvider: FcmConfigProvider, val t
 
   import FcmJsonFormats._
 
-  private val backend: SttpBackend[Future, Any] = fcmConfigProvider.constructBackend
+  private val backend: Backend[Future] = fcmConfigProvider.constructBackend
 
   private val logger: Logger = Logger(classOf[DefaultFcmSender])
 

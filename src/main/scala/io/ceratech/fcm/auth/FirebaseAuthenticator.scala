@@ -1,11 +1,11 @@
 package io.ceratech.fcm.auth
 
-import com.typesafe.scalalogging.Logger
+import play.api.Logger
 import io.ceratech.fcm.auth.GoogleJsonFormats._
 import io.ceratech.fcm.{FcmConfig, FcmConfigProvider, FcmSender}
 import pdi.jwt.{JwtAlgorithm, JwtCirce, JwtClaim, JwtHeader}
-import sttp.client3._
-import sttp.client3.circe._
+import sttp.client4._
+import sttp.client4.circe._
 
 import java.time.{Duration, Instant}
 import javax.inject.{Inject, Singleton}
@@ -34,7 +34,7 @@ class DefaultFirebaseAuthenticator @Inject()(val fcmConfigProvider: FcmConfigPro
   private val Scope = "https://www.googleapis.com/auth/firebase.messaging"
   private val GrantType = "urn:ietf:params:oauth:grant-type:jwt-bearer"
 
-  private val backend: SttpBackend[Future, Any] = fcmConfigProvider.constructBackend
+  private val backend: Backend[Future] = fcmConfigProvider.constructBackend
 
   private val logger: Logger = Logger(classOf[FcmSender])
 

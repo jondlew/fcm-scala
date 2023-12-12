@@ -1,7 +1,7 @@
 package io.ceratech.fcm
 
-import sttp.client3.SttpBackend
-import sttp.client3.asynchttpclient.future.AsyncHttpClientFutureBackend
+import sttp.client4.Backend
+import sttp.client4.pekkohttp.PekkoHttpBackend
 
 import scala.concurrent.Future
 
@@ -20,5 +20,5 @@ trait FcmConfigProvider {
   /**
     * @return the STTP backend to use needs to be an async backend; defaults to an [[org.asynchttpclient.AsyncHttpClient]] based backend
     */
-  def constructBackend: SttpBackend[Future, Any] = AsyncHttpClientFutureBackend()
+  def constructBackend: Backend[Future] = PekkoHttpBackend()
 }

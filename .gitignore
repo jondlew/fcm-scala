@@ -9,3 +9,4 @@ target
 /src/test/resources/key.json
 **/.gradle
 /.bsp
+.DS_Store
