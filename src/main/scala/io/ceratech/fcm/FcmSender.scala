@@ -1,6 +1,6 @@
 package io.ceratech.fcm
 
-import play.api.Logger
+import com.typesafe.scalalogging.Logger
 import io.ceratech.fcm.auth.FirebaseAuthenticator
 import io.circe.Error
 import io.circe.syntax._

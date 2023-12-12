@@ -1,13 +1,19 @@
 import Dependencies._
 
-enablePlugins(GitVersioning)
+//enablePlugins(GitVersioning)
+
+githubOwner := "jondlew"
+githubRepository := "fcm-scala"
+githubTokenSource := TokenSource.GitConfig("github.token")
+
 
 lazy val root = (project in file(".")).
   settings(
 
     inThisBuild(List(
-      organization := "io.ceratech",
-      organizationName := "ceratech",
+      version := "1.0.1",
+      organization := "com.newwavecoding",
+      organizationName := "newwavecoding",
       organizationHomepage := Some(url("https://ceratech.io/")),
       homepage := Some(url("https://github.com/scalameta/sbt-scalafmt")),
       description := "FCM (Firebase Cloud Messaging) client for Scala.",
@@ -26,18 +32,19 @@ lazy val root = (project in file(".")).
           url = url("https://ceratech.io/")
         )
       ),
-      scalaVersion := "2.13.6",
-      crossScalaVersions := Seq("2.13.6", "2.12.15")
+      scalaVersion := "2.13.12",
+      crossScalaVersions := Seq("2.13.12", "2.12.15")
     )),
 
     autoScalaLibrary := true,
 
     name := "fcm-scala",
+    publishMavenStyle := true,
+
 
     libraryDependencies ++= sttp,
     libraryDependencies ++= circe,
     libraryDependencies ++= Seq(
-      jwtCirce,
       ficus,
       scalaLogging,
       javaxInject,

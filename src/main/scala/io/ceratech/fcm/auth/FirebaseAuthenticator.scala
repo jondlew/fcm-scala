@@ -1,6 +1,6 @@
 package io.ceratech.fcm.auth
 
-import play.api.Logger
+import com.typesafe.scalalogging.Logger
 import io.ceratech.fcm.auth.GoogleJsonFormats._
 import io.ceratech.fcm.{FcmConfig, FcmConfigProvider, FcmSender}
 import pdi.jwt.{JwtAlgorithm, JwtCirce, JwtClaim, JwtHeader}
