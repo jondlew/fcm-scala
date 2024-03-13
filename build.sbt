@@ -11,7 +11,7 @@ lazy val root = (project in file(".")).
   settings(
 
     inThisBuild(List(
-      version := "1.0.1",
+      version := "1.0.2",
       organization := "com.newwavecoding",
       organizationName := "newwavecoding",
       organizationHomepage := Some(url("https://ceratech.io/")),
