@@ -2,9 +2,9 @@ import sbt._
 
 object Dependencies {
   private val circeVersion = "0.14.6"
-  private val sttpVersion = "4.0.0-M8"
+  private val sttpVersion = "4.0.0-M10"
   private val retryVersion = "0.3.6"
-  private val jwtVersion = "9.4.5"
+  private val jwtVersion = "10.0.0"
 
   lazy val sttp = Seq(
     "com.softwaremill.sttp.client4" %% "core" % sttpVersion,
@@ -24,7 +24,7 @@ object Dependencies {
   lazy val ficus = "com.iheart" %% "ficus" % "1.5.2"
   lazy val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5"
 
-  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.2.15"
+  lazy val scalaTest = "org.scalatest" %% "scalatest" % "3.2.17"
   lazy val scalaMock = "org.scalamock" %% "scalamock" % "5.2.0"
-  lazy val logback = "ch.qos.logback" % "logback-classic" % "1.4.7"
+  lazy val logback = "ch.qos.logback" % "logback-classic" % "1.4.14"
 }

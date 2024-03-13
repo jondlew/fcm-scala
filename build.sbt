@@ -32,8 +32,8 @@ lazy val root = (project in file(".")).
           url = url("https://ceratech.io/")
         )
       ),
-      scalaVersion := "2.13.12",
-      crossScalaVersions := Seq("2.13.12", "2.12.15")
+      scalaVersion := "2.13.13",
+      crossScalaVersions := Seq("2.13.13", "2.12.15")
     )),
 
     autoScalaLibrary := true,
